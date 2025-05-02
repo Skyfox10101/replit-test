@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Morph Shape Example</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+      font-family: sans-serif;
+    }
+
+    #shape {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at center, red, darkred);
+      border-radius: 50%;
+      transition: all 0.6s ease-in-out;
+    }
+
+    .square {
+      background: linear-gradient(to bottom right, blue, darkblue);
+      border-radius: 0%;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="shape"></div>
+  <button onclick="morphShape()">Change</button>
+
+  <script>
+    let isCircle = true;
+
+    function morphShape() {
+      const shape = document.getElementById('shape');
+      shape.classList.toggle('square');
+      isCircle = !isCircle;
+    }
+  </script>
+
+</body>
+
+</html>
